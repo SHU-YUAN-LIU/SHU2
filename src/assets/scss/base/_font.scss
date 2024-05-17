@@ -1,0 +1,52 @@
+// 字型
+$font_family_1: 'Proxima Nova';
+
+
+// 字體大小
+$font_size_1: 32px;
+$font_size_2: 28px;
+$font_size_3: 20px;
+$font_size_4: 16px;
+$font_size_5: 14px;
+
+
+// 字體間距
+$letter_spacing: 2px;
+
+// 字體行高
+$line_height: 2;
+
+
+
+//標題-32px
+@mixin title_1 {
+    font-family: $font_family_1 ;
+    font-size: $font_size_1;
+    // font-weight: initial;
+}
+
+//標題-28px(有加粗)
+@mixin title_2 {
+    font-family: $font_family_1 ;
+    font-size: $font_size_2;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+//內文-20px
+@mixin title_3 {
+    font-family: $font_family_1 ;
+    font-size: $font_size_3;
+}
+
+//內文-16px
+@mixin title_4 {
+    font-family: $font_family_1 ;
+    font-size: $font_size_4;
+}
+
+//內文-14px
+@mixin title_5 {
+    font-family: $font_family_1 ;
+    font-size: $font_size_5;
+}

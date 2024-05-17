@@ -1,0 +1,49 @@
+      //服務介紹-卡片
+      .card-group {
+          margin: auto;
+          text-align: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 20px;
+
+          .card-pic {
+              width: 120px;
+              height: 120px;
+
+              img {
+                  vertical-align: middle;
+                  object-fit: cover;
+              }
+          }
+
+          p {
+              width: 80%;
+              height: 85px;
+              @include title_3;
+              font-weight: 600;
+              color: $white;
+              letter-spacing: 4px;
+              line-height: 1.3;
+              padding: 20px;
+              display: flex;
+              justify-content: center;
+              align-items: flex-end;
+          }
+
+          span {
+              @include title_4;
+              color: $white;
+              text-align: center;
+              line-height: $line-height ;
+              letter-spacing: $letter-spacing ;
+
+          }
+
+          .view-more {
+              @include btn_1;
+
+
+          }
+      }

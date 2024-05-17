@@ -1,0 +1,115 @@
+.card-slider-group {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    gap: 80px;
+
+
+    .card-slider-left {
+        width: 45%;
+        position: relative;
+
+        div {
+            position: relative;
+
+            img {
+                width: 100%;
+                vertical-align: middle;
+                object-fit: cover;
+                border-radius: 30px;
+
+            }
+        }
+
+
+        button {
+            width: 250px;
+            height: 85px;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            background-color: $blue;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            position: absolute;
+            bottom: -120px;
+            left: 280px;
+
+            &:hover {
+                background-color: #008993;
+            }
+
+            span {
+                @include title_4;
+                color: $white;
+                text-align: center;
+                line-height: $line-height ;
+                letter-spacing: $letter-spacing ;
+            }
+
+            div {
+                width: 60px;
+                height: 2px;
+                background-color: $white;
+
+            }
+
+        }
+    }
+
+    .card-slider-right {
+        width: 45%;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+
+        span:nth-child(1) {
+            @include title_4;
+            color: $white;
+            letter-spacing: $letter-spacing;
+        }
+
+        span:nth-child(2) {
+            @include title_1;
+            color: $white;
+            letter-spacing: $letter-spacing;
+            margin-bottom: 40px;
+
+            &::after {
+                content: "";
+                display: block;
+                height: 8px;
+                width: 350px;
+                background-color: $blue;
+                position: absolute;
+                top: 54px;
+                z-index: -1;
+            }
+
+            &::before {
+                content: '';
+                width: 10px;
+                height: 10px;
+                background-color: $red;
+                border-radius: 50%;
+                position: absolute;
+                top: 50px;
+                right: 90px;
+
+            }
+        }
+
+        span:nth-child(3) {
+            @include title_4;
+            color: $white;
+            letter-spacing: $letter-spacing;
+            line-height: 1.5;
+        }
+    }
+}

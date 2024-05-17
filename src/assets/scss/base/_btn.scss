@@ -1,0 +1,18 @@
+// 膠囊形button
+@mixin btn_1 {
+    padding: 20px 40px;
+    background-color: $blue;
+    border: 2px solid $white;
+    border-radius: $border-radius-1;
+    letter-spacing: $letter-spacing;
+    color: $white;
+    @include title_5;
+    margin: 30px;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #008993;
+
+    }
+}

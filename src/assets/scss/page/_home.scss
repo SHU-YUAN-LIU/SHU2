@@ -1,0 +1,601 @@
+.home-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: $gray;
+
+
+    // 首頁開頭
+    .home-top {
+        position: relative;
+        
+        
+
+        // 影片
+        .video-container-group {
+            width: 100%;
+            height: 100vh;
+
+            //影片覆蓋黑色透明色塊
+            &::after {
+                content: "";
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.3);
+                mix-blend-mode: multiply;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 2;
+            }
+
+            .video-container {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+            }
+
+        }
+
+        // 標題
+        .home-title-group {
+            width: 70%;
+            height: 60vh;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            .logo {
+                width: 200px;
+                margin-bottom: 50px;
+
+                img {
+                    width: 100%;
+                    vertical-align: middle;
+                }
+            }
+
+            .home-title {
+                font-family: $font_family_1 ;
+                font-size: 36px;
+                font-weight: 600;
+
+                span {
+                    line-height: 2;
+                    letter-spacing: 10px;
+                    color: rgb(255, 255, 255);
+                    position: relative;
+                }
+
+                span:last-child::after {
+                    content: "";
+                    display: block;
+                    height: 10px;
+                    width: 558px;
+                    background-color: $blue;
+                    position: absolute;
+                    bottom: 2px;
+                    z-index: -1;
+                }
+
+                span:last-child::before {
+                    content: "";
+                    display: block;
+                    height: 10px;
+                    width: 10px;
+                    border-radius: 50%;
+                    background-color: $red;
+                    position: absolute;
+                    bottom: 2px;
+                    right: -15px;
+
+                }
+            }
+        }
+
+        // 左邊小字
+        .home-left-line-group {
+            position: absolute;
+            top: 40vh;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 150px;
+            left: -30px;
+            z-index: 2;
+
+
+            .home-left-line {
+                width: 100px;
+                height: 2px;
+                background-color: $white;
+                transform: rotate(90deg);
+            }
+
+            span {
+                @include title_4;
+                color: $white;
+                letter-spacing: 5px;
+                transform: rotate(270deg);
+
+            }
+
+        }
+
+        // 往下滑(TASTE US NOW!)
+        .taste-us-now {
+            position: absolute;
+            top: 93%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 100px;
+
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+
+                img {
+                    width: 65px;
+                    height: 65px;
+                }
+
+                span {
+                    @include title_5;
+                    color: $white;
+                    letter-spacing: $letter_spacing;
+                }
+            }
+
+            .taste-us-now-line {
+                width: 120px;
+                height: 2px;
+                background-color: rgb(189, 189, 189);
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    //內文影片
+    .content-video-container {
+        background-color: $gray;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+
+        .content-video {
+            width: 80%;
+        }
+
+        .content-video-word {
+            width: 80%;
+            @include title_4;
+            text-align: center;
+            line-height: $line-height ;
+            letter-spacing: $letter-spacing ;
+            margin: 60px;
+            position: relative;
+
+
+        }
+
+        button {
+            width: 225px;
+            height: 70px;
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            background-color: $blue;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+
+            &:hover {
+                background-color: #008993;
+            }
+
+            span {
+                @include title_4;
+                color: $white;
+                text-align: center;
+                line-height: $line-height ;
+                letter-spacing: $letter-spacing ;
+            }
+
+            div {
+                width: 60px;
+                height: 2px;
+                background-color: $white;
+
+            }
+
+        }
+
+    }
+
+    //得獎AWARDS-藍色區塊
+    .our-ingradients-group {
+        width: 100%;
+        height: 2900px;
+        background-color: $blue;
+        border-top-left-radius: $border-radius-1;
+        border-bottom-right-radius: $border-radius-1;
+        margin-top: 230px;
+        position: relative;
+
+        //藍色標題
+        .ingradients-top {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .our-ingradients-content {
+
+                @include title_4;
+                color: $white;
+                line-height: $line-height;
+                letter-spacing: $letter-spacing ;
+            }
+
+            //our server
+            button {
+                width: 250px;
+                height: 70px;
+                margin-bottom: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                border: none;
+                background-color: $dark_blue;
+                cursor: pointer;
+                margin-top: 60px;
+                transition: all .3s ease-in-out;
+
+                &:hover {
+                    background-color: #2c2c54;
+                }
+
+                span {
+                    @include title_4;
+                    color: $white;
+                    text-align: center;
+                    line-height: $line-height ;
+                    letter-spacing: $letter-spacing ;
+                }
+
+                div {
+                    width: 60px;
+                    height: 2px;
+                    background-color: $white;
+
+                }
+
+            }
+        }
+
+        //服務介紹-卡片
+        .cards {
+            width: 80%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                flex-grow: 1;
+                // border: 1px solid green;
+            }
+        }
+
+        // 藍底最底下小字
+        .ingradients-bottom {
+            margin: auto;
+            width: 30%;
+            position: relative;
+
+            p {
+                @include title_3;
+                color: $white;
+                letter-spacing: $letter-spacing ;
+                margin-top: 80px;
+                position: absolute;
+                z-index: 2;
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 7px;
+                    position: absolute;
+                    bottom: 0px;
+                    left: 0;
+
+                    background-color: rgba(255, 188, 88);
+                    z-index: -1;
+                }
+            }
+        }
+
+        //得獎AWARDS-白色區塊
+        .home-award-group {
+            width: 80%;
+            background-color: $white;
+            border-top-left-radius: $border-radius-1;
+            border-bottom-right-radius: $border-radius-1;
+            border-bottom-left-radius: $border-radius-1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 70px;
+            gap: 40px;
+            position: absolute;
+            right: 0;
+            top: -200px;
+
+            .awards-title {
+                width: 40%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 40px;
+
+                .award-content {
+                    @include title_4;
+                    color: $black;
+                    align-items: center;
+                    line-height: $line-height ;
+                    letter-spacing: $letter-spacing ;
+                }
+            }
+
+            .awards-img-group {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 30px;
+            }
+        }
+
+        // 底部TONYNG
+        .tonyng-bg {
+            width: 90%;
+            position: absolute;
+            bottom: -450px;
+
+
+            img {
+                border-top-right-radius: $border-radius-1;
+                border-bottom-left-radius: $border-radius-1;
+                border-bottom-right-radius: $border-radius-1;
+
+            }
+
+            .tonyng-group {
+                width: 80%;
+                gap: 80px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+
+
+                .tonyng-left {
+                    width: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 40px;
+                    text-align: center;
+
+                    img {
+                        width: 200px;
+                        height: 200px;
+                    }
+
+                    div {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        span:first-child {
+                            @include title_3;
+                            color: $white;
+                            letter-spacing: $letter-spacing ;
+                            margin-bottom: 10px;
+                        }
+
+                        span:last-child {
+                            @include title_4;
+                            font-style: italic;
+                            color: $white;
+                            letter-spacing: $letter-spacing ;
+                        }
+                    }
+                }
+
+                .tonyng-right {
+                    width: 70%;
+                    text-align: start;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 90px;
+                        height: 90px;
+                        margin-bottom: 40px;
+                    }
+
+                    span {
+                        @include title_3;
+                        letter-spacing: $letter-spacing;
+                        line-height: $line-height ;
+                        color: $white;
+
+                        span {
+                            color: rgba(255, 188, 88);
+                            font-weight: 600;
+                        }
+                    }
+                }
+
+            }
+
+        }
+    }
+
+    .brand-experience {
+        width: 80%;
+        margin: auto;
+        text-align: center;
+
+        span {
+            @include title_4;
+            letter-spacing: $letter-spacing;
+            line-height: $line-height;
+            color: $black;
+            display: inline-block;
+            margin-bottom: 40px;
+        }
+    }
+
+    .carousel-item {
+        position: relative;
+
+        homeSliderCard {
+            position: absolute;
+        }
+    }
+
+    // Home最底部
+    .home-slider-bg {
+        width: 100%;
+        position: relative;
+
+        .home-slider-cards-group {
+            width: 90%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            .left-arrow {
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $blue;
+                position: relative;
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+            .right-arrow {
+                cursor: pointer;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                background-color: $blue;
+                position: relative;
+
+                img {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+            }
+        }
+
+        .home-bg-pic {
+            width: 100%;
+            // height: 985px;
+
+            img {
+                width: 100%;
+                vertical-align: middle;
+                object-fit: cover;
+            }
+        }
+
+        .date-group {
+            position: absolute;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            top: 15%;
+            left: 85%;
+
+            .date-first {
+                @include title_4;
+                font-weight: 600;
+                color: rgb(255, 255, 255);
+
+                p {
+                    display: flex;
+                    flex-direction: column;
+
+
+                }
+
+            }
+
+            .date-end {
+                @include title_4;
+                font-weight: 600;
+                color: rgb(255, 255, 255);
+
+            }
+
+            .date-line {
+                width: 40px;
+                height: 2px;
+                background-color: $blue;
+                transform: rotate(-60deg);
+            }
+        }
+    }
+}
