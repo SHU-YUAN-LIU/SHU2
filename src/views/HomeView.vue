@@ -1,7 +1,7 @@
 <template>
 
   <div class="home-container">
-    <MainHeader :headerClass="headerClass" :blackHam="blackHam" :showLogo="showLogo" :showMenu.sync="showMenu" />
+    <MainHeader :headerClass="headerClass" :blackHam="blackHam" :showLogo="showLogo" />
     <!-- 首頁開頭 -->
     <div class="home-top">
       <!-- 影片 -->
@@ -213,7 +213,6 @@ export default {
       headerClass: 'transparent-background',
       blackHam: '',
       showLogo: false,
-      showMenu: false,
       lastScrollY: 0,
       isScrollingDown: false,
 
@@ -303,7 +302,8 @@ export default {
         //如果有，headerClass＝條件？[true執行這段]:[false執行這段];
         this.headerClass = this.isScrollingDown ? ['hide-header'] : ['white-background'];
         this.blackHam = 'black-ham';//漢堡菜單變成黑色
-        this.showLogo = !this.showMenu;//如果 showMenu 為 true，则 showLogo 為 false
+        this.showLogo = true;
+        this.localShowLogo = !this.showMenu;
 
       } else {
         // 如果滾動位置沒有超過視窗高度，將 headerClass 設置為 'transparent-background'，導航欄背景透明
@@ -311,12 +311,6 @@ export default {
         this.blackHam = '';
         this.showLogo = false;
       }
-    }
-  },
-  watch: {
-    showMenu(val) {
-      //當showMenu狀態改變時，重新調用handleScroll方法 更新showLogo的狀態
-      this.handleScroll();
     }
   },
   mounted() {

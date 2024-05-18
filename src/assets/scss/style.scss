@@ -28,3 +28,14 @@
 
 // @import "node_modules/bootstrap/scss/mixins"; //(bootstraps)
 // @import "node_modules/bootstrap/scss/bootstrap"; // Bootstrap 完整原始碼
+
+//讓反白的字體變顏色
+::-moz-selection {
+    background-color: rgba(212, 255, 0, 0.2);
+    color: #000;
+}
+ 
+::selection {
+    background-color:#EE6C8A;
+    color: #000;
+}

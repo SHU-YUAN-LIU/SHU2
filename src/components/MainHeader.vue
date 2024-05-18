@@ -34,7 +34,8 @@ export default {
     },
     data() {
         return {
-
+            showMenu: false, // 選單一開始關著
+            localShowLogo: this.showLogo,
         }
     },
     mounted() {
@@ -54,10 +55,6 @@ export default {
             default: '',
         },
         showLogo: {
-            type: Boolean,
-            default: false,
-        },
-        showMenu: {
             type: Boolean,
             default: false,
         },
