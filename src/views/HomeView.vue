@@ -1,13 +1,11 @@
 <template>
 
   <div class="home-container">
-    <MainHeader />
-    <!-- <MainHeader @click.stop="toggleMenu" /> -->
-    <!-- <hamMenu v-if="showMenu" /> -->
+    <MainHeader :headerClass="headerClass" :blackHam="blackHam" :showLogo="showLogo" :showMenu.sync="showMenu" />
     <!-- 首頁開頭 -->
     <div class="home-top">
       <!-- 影片 -->
-      <div class="video-container-group" @scroll="scrollEvent">
+      <div class="video-container-group">
         <video class="video-container" autoplay muted loop>
           <source src="@/assets/video/DigiSalad Website Video-v3.mp4" type="video/mp4" id="videoVideo">
         </video>
@@ -16,7 +14,7 @@
       <div class="home-title-group">
         <!-- logo -->
         <div class="logo">
-          <img src="@/assets/image/icon/logo.svg" alt="">
+          <img src="@/assets/image/icon/logo.svg" alt="logo">
         </div>
         <!-- title -->
         <div class="home-title">
@@ -205,10 +203,19 @@ export default {
   },
   data() {
     return {
+      //標題
       about: 'ABOUT DIGISALAD',
       awards: 'AWARDS',
       ourIngredients: 'OUR INGRADIENTS',
       ourBrandEx: 'OUR BRAND EXPERIENCE',
+
+      // 滾動時，導覽列變白＆漢堡變黑&顯示logo
+      headerClass: 'transparent-background',
+      blackHam: '',
+      showLogo: false,
+      showMenu: false,
+      lastScrollY: 0,
+      isScrollingDown: false,
 
       //cards陣列裡面放物件(卡片資訊)
       cards: [
@@ -278,13 +285,48 @@ export default {
       ]
     }
   },
+  methods: {
+    //滾動事件處理函數
+    handleScroll() {
+
+      const currentScrollY = window.scrollY; // 頁面頂部向下滾動了多少像素
+      const viewportHeight = window.innerHeight;// 視窗頂部到底部的高度（當前瀏覽器視窗的高度，以像素為單位）
+
+      // 判斷是向上或向下滾動，向下滾動：isScrollingDown 為 true/向上滾動：isScrollingDown 為 false
+      this.isScrollingDown = currentScrollY > this.lastScrollY;
+
+      // 更新 lastScrollY 為當前滾動位置，以便下一次滾動時能進行比較
+      this.lastScrollY = currentScrollY;
+
+      // 判斷當前滾動位置是否超過了視窗的高度
+      if (currentScrollY > viewportHeight) {
+        //如果有，headerClass＝條件？[true執行這段]:[false執行這段];
+        this.headerClass = this.isScrollingDown ? ['hide-header'] : ['white-background'];
+        this.blackHam = 'black-ham';//漢堡菜單變成黑色
+        this.showLogo = !this.showMenu;//如果 showMenu 為 true，则 showLogo 為 false
+
+      } else {
+        // 如果滾動位置沒有超過視窗高度，將 headerClass 設置為 'transparent-background'，導航欄背景透明
+        this.headerClass = 'transparent-background';
+        this.blackHam = '';
+        this.showLogo = false;
+      }
+    }
+  },
+  watch: {
+    showMenu(val) {
+      //當showMenu狀態改變時，重新調用handleScroll方法 更新showLogo的狀態
+      this.handleScroll();
+    }
+  },
   mounted() {
     document.title = 'Home'
+
+    //監聽了瀏覽器的滾動事件('事件的類型',事件觸發時要執行的處理函數);
+    window.addEventListener('scroll', this.handleScroll);
   },
-  methods: {
-    scrollEvent(e) {
-      console.log(e);
-    }
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll);
   },
 }
 </script>

@@ -1,5 +1,5 @@
 .header-group {
-    position:absolute ;
+    position:fixed ;
     width: 100%;
     height: 100px;
     z-index: 10;
@@ -14,10 +14,13 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+        z-index: 10;
 
         
 .header-logo{
     height: 100%;
+    position: fixed;
+    left: 0;
     img{
         width: 100%;
     }
@@ -61,21 +64,21 @@
                     align-items: flex-end;
                     height: 24px;
 
-                    div:nth-child(1) {
+                    .line:nth-child(1) {
                         width: 30px;
                         height: 3px;
                         background-color: $white;
                         margin: 3px 0;
                         transition: transform 0.3s, opacity 0.3s;
                     }
-                    div:nth-child(2) {
+                    .line:nth-child(2) {
                         width: 30px;
                         height: 3px;
                         background-color: $white;
                         margin: 3px 0;
                         transition: transform 0.3s, opacity 0.3s;
                     }
-                    div:nth-child(3) {
+                    .line:nth-child(3) {
                         width: 20px;
                         height: 3px;
                         background-color: $white;
@@ -83,17 +86,19 @@
                         transition: transform 0.3s, opacity 0.3s;
                     }
 
-                    &.active div:nth-child(1) {
+                    &.active .line:nth-child(1) {
                         transform: translateY(9px) rotate(45deg);
+                        background-color: $white !important;
                     }
 
-                    &.active div:nth-child(2) {
+                    &.active .line:nth-child(2) {
                         opacity: 0;
                     }
 
-                    &.active div:nth-child(3) {
+                    &.active .line:nth-child(3) {
                         width: 30px;
                         transform: translateY(-9px) rotate(-45deg);
+                        background-color: $white !important;
                     }
                 }
                 
@@ -101,4 +106,25 @@
         }
 
     }
+}
+
+//滾動時，底色從透明變成白色
+.transparent-background {
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.white-background {
+    background-color: $white;
+    transition: background-color 0.3s;
+}
+
+.hide-header {
+    transform: translateY(-100%);
+    transition: transform 0.3s;
+}
+
+//滾動時，漢堡變成黑色
+.black-ham{
+background-color: $black !important;
 }
