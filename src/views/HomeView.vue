@@ -235,7 +235,7 @@ export default {
       cards: [
         {
           // 卡片1
-          serverPic: '/assets/image/icon/card-1.svg',
+          serverPic: '/SHU2/assets/image/icon/about-us-BL2V0kEA.svg',
           serverTitle: 'UX DESIGN',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
