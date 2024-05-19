@@ -44,7 +44,7 @@
       <video class="content-video" autoplay muted loop>
         <source src="@/assets/video/DigiSalad - 為您創造驚喜的用戶體驗.mp4" type="video/mp4" id="videoVideo" />
       </video>
-      <span class="content-video-word">
+      <span data-aos="fade-up" class="content-video-word">
         Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
         bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
         Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at <br />condimentum nisl, vitae
@@ -62,13 +62,13 @@
     <div class="our-ingradients-group">
       <!-- 藍色標題  -->
       <div class="ingradients-top">
-        <div class="home-content-title-ingra">
+        <div class="home-content-title-ingra" data-aos="fade-up">
           <span>
             OUR INGRADIENTS
             <div class="wave-line-dark"></div>
           </span>
         </div>
-        <span class="our-ingradients-content">
+        <span class="our-ingradients-content" data-aos="fade-up">
           Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
           bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
           Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae
@@ -94,11 +94,11 @@
       </div>
 
       <!-- 藍底最底下小字 -->
-      <div class="ingradients-bottom">
+      <div class="ingradients-bottom" data-aos="fade-up">
         <p>VIEW MORE DIGISALAD’S INGRADIENTS</p>
       </div>
       <!-- 得獎AWARDS-白色區塊 -->
-      <div class="home-award-group">
+      <div class="home-award-group" data-aos="fade-up">
         <div class="awards-title">
           <waveLineTitle :waveLineTitle="awards" />
           <span class="award-content">Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper
@@ -125,7 +125,7 @@
       </div>
 
       <!-- 底部TONYNG -->
-      <div class="tonyng-bg">
+      <div class="tonyng-bg" data-aos="fade-right">
         <div class="tonyng-bg-pic">
           <img src="@/assets/image/TONYNG-bg.png" alt="TONYNG-bg" />
         </div>
@@ -155,13 +155,13 @@
     </div>
 
     <!-- 品牌經驗 -->
-    <div class="home-content-title-brand">
+    <div class="home-content-title-brand" data-aos="fade-up">
       <span>
         OUR BRAND EXPERIENCE
         <div class="wave-line"></div>
       </span>
     </div>
-    <div class="brand-experience">
+    <div class="brand-experience" data-aos="fade-up">
       <span>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
         bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.
         Phasellus at semper turpis. Nunc eu tellus tortor. Etiam at condimentum nisl, vitae sagittis
@@ -204,11 +204,22 @@
 </template>
 
 <script>
-import waveLineTitle from '@/components/waveLineTitle.vue'
-import ourServerCard from '@/components/ourServerCard.vue'
-import homeSliderCard from '@/components/homeSliderCard.vue'
-import MainHeader from '@/components/MainHeader.vue'
-import hamMenu from '@/components/hamMenu.vue'
+import waveLineTitle from '@/components/waveLineTitle.vue';
+import ourServerCard from '@/components/ourServerCard.vue';
+import homeSliderCard from '@/components/homeSliderCard.vue';
+import MainHeader from '@/components/MainHeader.vue';
+import hamMenu from '@/components/hamMenu.vue';
+//vue 在data直接寫路徑，build會讀不到，要用變數帶入
+import img1 from '@/assets/image/icon/card-1.svg';
+import img2 from '@/assets/image/icon/card-2.svg';
+import img3 from '@/assets/image/icon/card-3.svg';
+import img4 from '@/assets/image/icon/card-4.svg';
+import img5 from '@/assets/image/icon/card-5.svg';
+import img6 from '@/assets/image/icon/card-6.svg';
+import img7 from '@/assets/image/icon/card-7.svg';
+import img8 from '@/assets/image/icon/card-8.svg';
+import img9 from '@/assets/image/icon/card-9.svg';
+
 export default {
   components: {
     waveLineTitle,
@@ -235,7 +246,7 @@ export default {
       cards: [
         {
           // 卡片1
-          serverPic: '/SHU2/assets/image/icon/card-1.svg',
+          serverPic: img1,
           serverTitle: 'UX DESIGN',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
@@ -243,7 +254,7 @@ export default {
         },
         {
           // 卡片2
-          serverPic: './SHU2/assets/image/icon/card-2.svg',
+          serverPic: img2,
           serverTitle: 'UI DESIGN',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
@@ -251,7 +262,7 @@ export default {
         },
         {
           // 卡片3
-          serverPic: '/assets/image/icon/card-3.svg',
+          serverPic: img3,
           serverTitle: 'WEBSITE DEVELOPMENT',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
@@ -259,7 +270,7 @@ export default {
         },
         {
           // 卡片4
-          serverPic: '/assets/image/icon/card-4.svg',
+          serverPic: img4,
           serverTitle: 'MOBILE APP DEVELOPMENT',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
@@ -267,7 +278,7 @@ export default {
         },
         {
           // 卡片5
-          serverPic: '/assets/image/icon/card-5.svg',
+          serverPic: img5,
           serverTitle: 'ECOMMERCE',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
@@ -275,7 +286,7 @@ export default {
         },
         {
           // 卡片6
-          serverPic: '/assets/image/icon/card-6.svg',
+          serverPic: img6,
           serverTitle: 'CUSTOMER LOYALTY',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
@@ -283,7 +294,7 @@ export default {
         },
         {
           // 卡片7
-          serverPic: '/assets/image/icon/card-7.svg',
+          serverPic: img7,
           serverTitle: 'DIGITAL TRANSFORMATION',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
@@ -291,7 +302,7 @@ export default {
         },
         {
           // 卡片8
-          serverPic: '/assets/image/icon/card-8.svg',
+          serverPic: img8,
           serverTitle: 'DIGITAL MARKETING',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',
@@ -299,7 +310,7 @@ export default {
         },
         {
           // 卡片9
-          serverPic: '/assets/image/icon/card-9.svg',
+          serverPic: img9,
           serverTitle: 'BRANDING',
           serverContent:
             'Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.',

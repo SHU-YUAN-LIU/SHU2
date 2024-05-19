@@ -1,6 +1,6 @@
 <template>
     <div class="home-content-title">
-        <span>
+        <span data-aos="fade-up">
             {{ waveLineTitle }}
             <div class="wave-line"></div>
         </span>
