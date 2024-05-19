@@ -1,602 +1,804 @@
 .home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-color: $gray;
+
+  // 首頁開頭
+  .home-top {
     position: relative;
-    width: 100%;
-    height: 100vh;
-    background-color: $gray;
 
+    // 影片
+    .video-container-group {
+      width: 100%;
+      height: 100vh;
 
-    // 首頁開頭
-    .home-top {
-        position: relative;
-
-        
-
-        // 影片
-        .video-container-group {
-            width: 100%;
-            height: 100vh;
-
-            //影片覆蓋黑色透明色塊
-            &::after {
-                content: "";
-                width: 100%;
-                height: 100vh;
-                background-color: rgba(0, 0, 0, 0.3);
-                mix-blend-mode: multiply;
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                z-index: 2;
-            }
-
-            .video-container {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                position: absolute;
-                top: 0;
-                left: 0;
-
-            }
-
-        }
-
-        // 標題
-        .home-title-group {
-            width: 70%;
-            height: 60vh;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
-
-            .logo {
-                width: 200px;
-                margin-bottom: 50px;
-
-                img {
-                    width: 100%;
-                    vertical-align: middle;
-                }
-            }
-
-            .home-title {
-                font-family: $font_family_1 ;
-                font-size: 36px;
-                font-weight: 600;
-
-                span {
-                    line-height: 2;
-                    letter-spacing: 10px;
-                    color: rgb(255, 255, 255);
-                    position: relative;
-                }
-
-                span:last-child::after {
-                    content: "";
-                    display: block;
-                    height: 10px;
-                    width: 558px;
-                    background-color: $blue;
-                    position: absolute;
-                    bottom: 2px;
-                    z-index: -1;
-                }
-
-                span:last-child::before {
-                    content: "";
-                    display: block;
-                    height: 10px;
-                    width: 10px;
-                    border-radius: 50%;
-                    background-color: $red;
-                    position: absolute;
-                    bottom: 2px;
-                    right: -15px;
-
-                }
-            }
-        }
-
-        // 左邊小字
-        .home-left-line-group {
-            position: absolute;
-            top: 40vh;
-            display: flex;
-            flex-direction: column-reverse;
-            align-items: center;
-            gap: 150px;
-            left: -30px;
-            z-index: 2;
-
-
-            .home-left-line {
-                width: 100px;
-                height: 2px;
-                background-color: $white;
-                transform: rotate(90deg);
-            }
-
-            span {
-                @include title_4;
-                color: $white;
-                letter-spacing: 5px;
-                transform: rotate(270deg);
-
-            }
-
-        }
-
-        // 往下滑(TASTE US NOW!)
-        .taste-us-now {
-            position: absolute;
-            top: 93%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 3;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 100px;
-
-
-            div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 20px;
-
-                img {
-                    width: 65px;
-                    height: 65px;
-                }
-
-                span {
-                    @include title_5;
-                    color: $white;
-                    letter-spacing: $letter_spacing;
-                }
-            }
-
-            .taste-us-now-line {
-                width: 120px;
-                height: 2px;
-                background-color: rgb(189, 189, 189);
-                transform: rotate(90deg);
-            }
-        }
-    }
-
-    //內文影片
-    .content-video-container {
-        background-color: $gray;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-
-
-        .content-video {
-            width: 80%;
-        }
-
-        .content-video-word {
-            width: 80%;
-            @include title_4;
-            text-align: center;
-            line-height: $line-height ;
-            letter-spacing: $letter-spacing ;
-            margin: 60px;
-            position: relative;
-
-
-        }
-
-        button {
-            width: 225px;
-            height: 70px;
-            margin-bottom: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            border: none;
-            background-color: $blue;
-            cursor: pointer;
-            transition: all .3s ease-in-out;
-
-            &:hover {
-                background-color: #008993;
-            }
-
-            span {
-                @include title_4;
-                color: $white;
-                text-align: center;
-                line-height: $line-height ;
-                letter-spacing: $letter-spacing ;
-            }
-
-            div {
-                width: 60px;
-                height: 2px;
-                background-color: $white;
-
-            }
-
-        }
-
-    }
-
-    //得獎AWARDS-藍色區塊
-    .our-ingradients-group {
+      //影片覆蓋黑色透明色塊
+      &::after {
+        content: '';
         width: 100%;
-        height: 2900px;
-        background-color: $blue;
-        border-top-left-radius: $border-radius-1;
-        border-bottom-right-radius: $border-radius-1;
-        margin-top: 230px;
-        position: relative;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        mix-blend-mode: multiply;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 2;
+      }
 
-        //藍色標題
-        .ingradients-top {
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-
-            .our-ingradients-content {
-
-                @include title_4;
-                color: $white;
-                line-height: $line-height;
-                letter-spacing: $letter-spacing ;
-            }
-
-            //our server
-            button {
-                width: 250px;
-                height: 70px;
-                margin-bottom: 60px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-                border: none;
-                background-color: $dark_blue;
-                cursor: pointer;
-                margin-top: 60px;
-                transition: all .3s ease-in-out;
-
-                &:hover {
-                    background-color: #2c2c54;
-                }
-
-                span {
-                    @include title_4;
-                    color: $white;
-                    text-align: center;
-                    line-height: $line-height ;
-                    letter-spacing: $letter-spacing ;
-                }
-
-                div {
-                    width: 60px;
-                    height: 2px;
-                    background-color: $white;
-
-                }
-
-            }
-        }
-
-        //服務介紹-卡片
-        .cards {
-            width: 80%;
-            margin: auto;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-
-            div {
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-                flex-grow: 1;
-                // border: 1px solid green;
-            }
-        }
-
-        // 藍底最底下小字
-        .ingradients-bottom {
-            margin: auto;
-            width: 30%;
-            position: relative;
-
-            p {
-                @include title_3;
-                color: $white;
-                letter-spacing: $letter-spacing ;
-                margin-top: 80px;
-                position: absolute;
-                z-index: 2;
-
-                &::after {
-                    content: "";
-                    width: 100%;
-                    height: 7px;
-                    position: absolute;
-                    bottom: 0px;
-                    left: 0;
-
-                    background-color: rgba(255, 188, 88);
-                    z-index: -1;
-                }
-            }
-        }
-
-        //得獎AWARDS-白色區塊
-        .home-award-group {
-            width: 80%;
-            background-color: $white;
-            border-top-left-radius: $border-radius-1;
-            border-bottom-right-radius: $border-radius-1;
-            border-bottom-left-radius: $border-radius-1;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 70px;
-            gap: 40px;
-            position: absolute;
-            right: 0;
-            top: -200px;
-
-            .awards-title {
-                width: 40%;
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 40px;
-
-                .award-content {
-                    @include title_4;
-                    color: $black;
-                    align-items: center;
-                    line-height: $line-height ;
-                    letter-spacing: $letter-spacing ;
-                }
-            }
-
-            .awards-img-group {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-                grid-gap: 30px;
-            }
-        }
-
-        // 底部TONYNG
-        .tonyng-bg {
-            // width: 90%;
-            position: absolute;
-            bottom: -450px;
-
-
-            img {
-                border-top-right-radius: $border-radius-1;
-                border-bottom-left-radius: $border-radius-1;
-                border-bottom-right-radius: $border-radius-1;
-
-            }
-
-            .tonyng-group {
-                width: 80%;
-                gap: 80px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                display: flex;
-                justify-content: center;
-                align-items: flex-end;
-
-
-                .tonyng-left {
-                    width: 30%;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 40px;
-                    text-align: center;
-
-                    img {
-                        width: 200px;
-                        height: 200px;
-                    }
-
-                    div {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-
-                        span:first-child {
-                            @include title_3;
-                            color: $white;
-                            letter-spacing: $letter-spacing ;
-                            margin-bottom: 10px;
-                        }
-
-                        span:last-child {
-                            @include title_4;
-                            font-style: italic;
-                            color: $white;
-                            letter-spacing: $letter-spacing ;
-                        }
-                    }
-                }
-
-                .tonyng-right {
-                    width: 70%;
-                    text-align: start;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-
-                    img {
-                        width: 90px;
-                        height: 90px;
-                        margin-bottom: 40px;
-                    }
-
-                    span {
-                        @include title_3;
-                        letter-spacing: $letter-spacing;
-                        line-height: $line-height ;
-                        color: $white;
-
-                        span {
-                            color: rgba(255, 188, 88);
-                            font-weight: 600;
-                        }
-                    }
-                }
-
-            }
-
-        }
+      .video-container {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
     }
 
-    .brand-experience {
-        width: 80%;
-        margin: auto;
-        text-align: center;
+    // 標題
+    .home-title-group {
+      width: 70%;
+      height: 60vh;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      .logo {
+        width: 180px;
+        margin-bottom: 30px;
+        @media (width<=1024px) {
+          width: 165px;
+        }
+
+        img {
+          width: 100%;
+          vertical-align: middle;
+        }
+      }
+
+      .home-title {
+        font-family: $font_family_1;
+        font-size: 36px;
+        font-weight: 600;
+        @media (width<=1024px) {
+          font-size: 28px;
+        }
 
         span {
-            @include title_4;
-            letter-spacing: $letter-spacing;
-            line-height: $line-height;
-            color: $black;
-            display: inline-block;
-            margin-bottom: 40px;
+          line-height: 1.8;
+          letter-spacing: 10px;
+          color: rgb(255, 255, 255);
+          position: relative;
         }
+
+        span:last-child::after {
+          content: '';
+          display: block;
+          height: 10px;
+          width: 100%;
+          background-color: $blue;
+          position: absolute;
+          bottom: 2px;
+          z-index: -1;
+          @media (width<=1024px) {
+            // width: 465px;
+            bottom: 0;
+          }
+        }
+
+        span:last-child::before {
+          content: '';
+          display: block;
+          height: 10px;
+          width: 10px;
+          border-radius: 50%;
+          background-color: $red;
+          position: absolute;
+          bottom: 2px;
+          right: -15px;
+        }
+      }
     }
 
-    .carousel-item {
-        position: relative;
+    // 左邊小字
+    .home-left-line-group {
+      position: absolute;
+      top: 40vh;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 150px;
+      left: -30px;
+      z-index: 2;
+      @media (width<=768px) {
+        display: none;
+      }
 
-        homeSliderCard {
+      .home-left-line {
+        width: 100px;
+        height: 2px;
+        background-color: $white;
+        transform: rotate(90deg);
+      }
+
+      span {
+        @include title_4;
+        color: $white;
+        letter-spacing: 5px;
+        transform: rotate(270deg);
+      }
+    }
+
+    // 往下滑(TASTE US NOW!)
+    .taste-us-now {
+      position: absolute;
+      top: 93%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 100px;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+
+        img {
+          width: 65px;
+          height: 65px;
+        }
+
+        span {
+          @include title_5;
+          color: $white;
+          letter-spacing: $letter_spacing;
+        }
+      }
+
+      .taste-us-now-line {
+        width: 120px;
+        height: 2px;
+        background-color: rgb(189, 189, 189);
+        transform: rotate(90deg);
+      }
+    }
+  }
+
+  //內文影片
+  .content-video-container {
+    background-color: $gray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 0 350px;
+
+    .content-video {
+      width: 80%;
+    }
+
+    .content-video-word {
+      width: 80%;
+      @include title_4;
+      text-align: center;
+      line-height: $line-height;
+      letter-spacing: $letter-spacing;
+      margin: 60px;
+      position: relative;
+    }
+
+    button {
+      width: 225px;
+      height: 70px;
+      margin-bottom: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      background-color: $blue;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background-color: #008993;
+      }
+
+      span {
+        @include title_4;
+        color: $white;
+        text-align: center;
+        line-height: $line-height;
+        letter-spacing: $letter-spacing;
+      }
+
+      div {
+        width: 60px;
+        height: 2px;
+        background-color: $white;
+      }
+    }
+  }
+
+  //得獎AWARDS-藍色區塊
+  .our-ingradients-group {
+    width: 100%;
+    height: 2900px;
+    background-color: $blue;
+    border-top-left-radius: $border-radius-1;
+    border-bottom-right-radius: $border-radius-1;
+    position: absolute;
+    top: 2850px;
+    @media (width<=1440px) {
+      top: 2650px;
+    }
+    @media (width<=1024px) {
+      top: 2200px;
+      height: 4000px;
+    }
+    @media (width<=768px) {
+      height: 4300px;
+    }
+
+    //藍色標題
+    .ingradients-top {
+      width: 80%;
+      margin: auto;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media (width<=1024px) {
+        margin-top: 200px;
+      }
+      .home-content-title-ingra {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 360px 0 40px;
+        span {
+          @include title_2;
+          color: $black;
+          position: relative;
+
+          &::after {
+            content: '';
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            background-color: $red;
             position: absolute;
+            bottom: 20px;
+            right: -25px;
+          }
+
+          // 波浪底線
+          .wave-line-dark {
+            width: 110%;
+            height: 15px;
+            background-repeat: repeat-x;
+            background: radial-gradient(
+                circle at 10px -7px,
+                transparent 8px,
+                $dark_blue 8px,
+                $dark_blue 9px,
+                transparent 10px
+              ),
+              radial-gradient(
+                circle at 10px 27px,
+                transparent 8px,
+                $dark_blue 8px,
+                $dark_blue 9px,
+                transparent 10px
+              );
+            background-size: 20px 20px;
+            background-position:
+              -10px calc(100% + 16px),
+              0 calc(100% - 4px);
+          }
         }
+      }
+
+      .our-ingradients-content {
+        @include title_4;
+        color: $white;
+        line-height: $line-height;
+        letter-spacing: $letter-spacing;
+      }
+
+      //our server
+      button {
+        width: 250px;
+        height: 70px;
+        margin-bottom: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border: none;
+        background-color: $dark_blue;
+        cursor: pointer;
+        margin-top: 60px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+          background-color: #2c2c54;
+        }
+
+        span {
+          @include title_4;
+          color: $white;
+          text-align: center;
+          line-height: $line-height;
+          letter-spacing: $letter-spacing;
+        }
+
+        div {
+          width: 60px;
+          height: 2px;
+          background-color: $white;
+        }
+      }
     }
 
-    // Home最底部
-    .home-slider-bg {
-        width: 100%;
-        position: relative;
+    //服務介紹-卡片
+    .cards {
+      width: 80%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      @media (width<=1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-        .home-slider-cards-group {
-            width: 90%;
+      div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        flex-grow: 1;
+        // border: 1px solid green;
+      }
+    }
+
+    // 藍底最底下小字
+    .ingradients-bottom {
+      margin: auto;
+      width: 23%;
+      position: relative;
+      @media (width<=1440px) {
+        width: 30%;
+      }
+      @media (width<=1024px) {
+        width: 45%;
+      }
+      @media (width<=768px) {
+        width: 60%;
+      }
+
+      p {
+        @include title_3;
+        color: $white;
+        letter-spacing: $letter-spacing;
+        margin-top: 80px;
+        position: relative;
+        text-align: center;
+        z-index: 2;
+        @media (width<=1024px) {
+          margin-top: 65px;
+        }
+        @media (width<=768px) {
+          margin-top: 25px;
+        }
+
+        &::after {
+          content: '';
+          width: 100%;
+          height: 7px;
+          position: absolute;
+          bottom: 0px;
+          left: 0;
+
+          background-color: rgba(255, 188, 88);
+          z-index: -1;
+        }
+      }
+    }
+
+    //得獎AWARDS-白色區塊
+    .home-award-group {
+      width: 80%;
+      background-color: $white;
+      border-top-left-radius: $border-radius-1;
+      border-bottom-right-radius: $border-radius-1;
+      border-bottom-left-radius: $border-radius-1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 70px;
+      gap: 40px;
+      position: absolute;
+      right: 0;
+      top: -180px;
+      @media (width<=1440px) {
+        top: -220px;
+      }
+      @media (width<=1024px) {
+        flex-direction: column;
+      }
+      @media (width<=768px) {
+        padding: 50px;
+      }
+
+      .awards-title {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 40px;
+        @media (width<=1024px) {
+          width: 80%;
+        }
+
+        .award-content {
+          @include title_4;
+          color: $black;
+          align-items: center;
+          line-height: $line-height;
+          letter-spacing: $letter-spacing;
+        }
+      }
+
+      .awards-img-group {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 30px;
+        div {
+          width: auto;
+          img {
+            width: 100%;
+            vertical-align: middle;
+            object-fit: cover;
+          }
+        }
+      }
+    }
+
+    // 底部TONYNG
+    .tonyng-bg {
+      position: absolute;
+      bottom: -300px;
+      width: 90%;
+      @media (width<=1440px) {
+        bottom: -450px;
+      }
+      @media (width<=1024px) {
+        bottom: -380px;
+      }
+      @media (width<=768px) {
+        width: 100%;
+        bottom: -300px;
+      }
+      div {
+        // width: 90%;
+        img {
+          border-top-right-radius: $border-radius-1;
+          border-bottom-left-radius: $border-radius-1;
+          border-bottom-right-radius: $border-radius-1;
+          vertical-align: middle;
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .tonyng-group {
+        width: 80%;
+        gap: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        @media (width<=768px) {
+          gap: 20px;
+          width: 90%;
+        }
+
+        .tonyng-left {
+          width: 30%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 40px;
+          text-align: center;
+          @media (width<=768px) {
+            gap: 20px;
+            width: 40%;
+          }
+          .tonyng {
+            width: 200px;
+            height: 200px;
+            @media (width<=768px) {
+              width: 150px;
+              height: 150px;
+            }
+            img {
+              width: 100%;
+              vertical-align: middle;
+              object-fit: cover;
+            }
+          }
+
+          div {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
 
-            .left-arrow {
-                cursor: pointer;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background-color: $blue;
-                position: relative;
-
-                img {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
+            span:first-child {
+              @include title_3;
+              color: $white;
+              letter-spacing: $letter-spacing;
+              margin-bottom: 10px;
+              @media (width<=768px) {
+                font-size: 16px;
+              }
             }
 
-            .right-arrow {
-                cursor: pointer;
-                width: 50px;
-                height: 50px;
-                border-radius: 50%;
-                background-color: $blue;
-                position: relative;
-
-                img {
-                    position: absolute;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-
+            span:last-child {
+              @include title_4;
+              font-style: italic;
+              color: $white;
+              letter-spacing: $letter-spacing;
             }
+          }
         }
 
-        .home-bg-pic {
-            width: 100%;
-            // height: 985px;
-
+        .tonyng-right {
+          width: 70%;
+          text-align: start;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          .quote-pic {
+            @media (width<=768px) {
+              width: 85px;
+            }
             img {
-                width: 100%;
-                height: 100vh;
-                vertical-align: middle;
-                object-fit: cover;
+              width: 100%;
+              object-fit: cover;
+              vertical-align: middle;
+              margin-bottom: 40px;
+              @media (width<=1024px) {
+                margin-bottom: 20px;
+              }
             }
+          }
+          span {
+            @include title_3;
+            letter-spacing: $letter-spacing;
+            line-height: $line-height;
+            color: $white;
+            @media (width<=1024px) {
+              line-height: 1.8;
+            }
+            @media (width<=768px) {
+              font-size: 16px;
+              line-height: 1.5;
+            }
+
+            span {
+              color: rgba(255, 188, 88);
+              font-weight: 600;
+            }
+          }
         }
-
-        .date-group {
-            position: absolute;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            top: 15%;
-            left: 85%;
-
-            .date-first {
-                @include title_4;
-                font-weight: 600;
-                color: rgb(255, 255, 255);
-
-                p {
-                    display: flex;
-                    flex-direction: column;
-
-
-                }
-
-            }
-
-            .date-end {
-                @include title_4;
-                font-weight: 600;
-                color: rgb(255, 255, 255);
-
-            }
-
-            .date-line {
-                width: 40px;
-                height: 2px;
-                background-color: $blue;
-                transform: rotate(-60deg);
-            }
-        }
+      }
     }
+  }
+  //品牌經驗
+  .home-content-title-brand {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 0 60px;
+    margin-top: 3300px;
+    @media (width<=1440px) {
+      margin-top: 3400px;
+    }
+    @media (width<=768px) {
+      margin-top: 4400px;
+    }
+    span {
+      @include title_2;
+      color: $black;
+      position: relative;
+
+      &::after {
+        content: '';
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: $red;
+        position: absolute;
+        bottom: 20px;
+        right: -25px;
+      }
+
+      // 波浪底線
+      .wave-line {
+        width: 110%;
+        height: 15px;
+        background-repeat: repeat-x;
+        background: radial-gradient(
+            circle at 10px -7px,
+            transparent 8px,
+            $blue 8px,
+            $blue 9px,
+            transparent 10px
+          ),
+          radial-gradient(
+            circle at 10px 27px,
+            transparent 8px,
+            $blue 8px,
+            $blue 9px,
+            transparent 10px
+          );
+        background-size: 20px 20px;
+        background-position:
+          -10px calc(100% + 16px),
+          0 calc(100% - 4px);
+      }
+    }
+  }
+  .brand-experience {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+
+    span {
+      @include title_4;
+      letter-spacing: $letter-spacing;
+      line-height: $line-height;
+      color: $black;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+    .brand-ex-pic {
+      width: 80%;
+      margin: auto;
+      img {
+        width: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .carousel-item {
+    position: relative;
+
+    homeSliderCard {
+      position: absolute;
+    }
+  }
+
+  // Home最底部
+  .home-slider-bg {
+    width: 100%;
+    position: relative;
+    margin-top: 30px;
+
+    .home-slider-cards-group {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      .left-arrow {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $blue;
+        position: relative;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+
+      .right-arrow {
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: $blue;
+        position: relative;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+    }
+
+    .home-bg-pic {
+      width: 100%;
+      // height: 985px;
+
+      img {
+        width: 100%;
+        height: 100vh;
+        vertical-align: middle;
+        object-fit: cover;
+      }
+    }
+
+    .date-group {
+      position: absolute;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      top: 15%;
+      left: 85%;
+      @media (width<=768px) {
+        display: none;
+      }
+
+      .date-first {
+        @include title_4;
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+
+        p {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+
+      .date-end {
+        @include title_4;
+        font-weight: 600;
+        color: rgb(255, 255, 255);
+      }
+
+      .date-line {
+        width: 40px;
+        height: 2px;
+        background-color: $blue;
+        transform: rotate(-60deg);
+      }
+    }
+  }
 }

@@ -62,16 +62,21 @@
     <div class="our-ingradients-group">
       <!-- 藍色標題  -->
       <div class="ingradients-top">
-        <waveLineTitle :waveLineTitle="ourIngredients" style="padding: 360px 0 40px;" />
+        <div class="home-content-title-ingra">
+          <span>
+            OUR INGRADIENTS
+            <div class="wave-line-dark"></div>
+          </span>
+
+        </div>
         <span class="our-ingradients-content">
           Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
-          tincidunt<br>
-          urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu tellus
-          tortor.<br> Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend
-          a
-          dolor et, venenatis<br> facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam
+          tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare. Phasellus at semper turpis. Nunc eu
+          tellus
+          tortor. Etiam at condimentum nisl, vitae sagittis orci. Donec id dignissim nunc. Donec elit ante, eleifend
+          a dolor et, venenatis facilisis dolor. In feugiat orci odio, sed lacinia sem elementum quis. Aliquam
           consectetur,
-          eros et vulputate euismod,<br> nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie
+          eros et vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie
           faucibus.
         </span>
         <!-- our server -->
@@ -107,26 +112,41 @@
           </span>
         </div>
         <div class="awards-img-group">
-          <img src="@/assets/image/亞洲智能應用程式大獎.svg" alt="">
-          <img src="@/assets/image/亞洲智能應用程式大獎.svg" alt="">
-          <img src="@/assets/image/亞洲智能應用程式大獎.svg" alt="">
-          <img src="@/assets/image/亞洲智能應用程式大獎.svg" alt="">
+          <div>
+            <img src="@/assets/image/亞洲智能應用程式大獎.svg" alt="Asia-award">
+          </div>
+          <div>
+            <img src="@/assets/image/亞洲智能應用程式大獎.svg" alt="Asia-award">
+          </div>
+          <div>
+            <img src="@/assets/image/亞洲智能應用程式大獎.svg" alt="Asia-award">
+          </div>
+          <div>
+            <img src="@/assets/image/亞洲智能應用程式大獎.svg" alt="Asia-award">
+          </div>
+
         </div>
       </div>
 
       <!-- 底部TONYNG -->
       <div class="tonyng-bg">
-        <img src="@/assets/image/TONYNG-bg.png" alt="">
+        <div>
+          <img src="@/assets/image/TONYNG-bg.png" alt="TONYNG-bg">
+        </div>
         <div class="tonyng-group">
           <div class="tonyng-left">
-            <img src="@/assets/image/TONYNG.png" alt="">
+            <div class="tonyng">
+              <img src="@/assets/image/TONYNG.png" alt="TONYNG">
+            </div>
             <div>
               <span>TONY NG</span>
               <span>Founder & Creative Director</span>
             </div>
           </div>
           <div class="tonyng-right">
-            <img src="@/assets/image/icon/quote.svg" alt="">
+            <div class="quote-pic">
+              <img src="@/assets/image/icon/quote.svg" alt="quote">
+            </div>
             <span>A great digital work isn’t about designing beautiful pages purely. It is about context - how do we
               deliver
               the <span>right experience to the right person at the right time.</span> The most important thing is that
@@ -140,7 +160,13 @@
     </div>
 
     <!-- 品牌經驗 -->
-    <waveLineTitle :waveLineTitle="ourBrandEx" style="margin-top: 550px; padding: 13px 0 60px;" />
+    <div class="home-content-title-brand">
+      <span>
+        OUR BRAND EXPERIENCE
+        <div class="wave-line"></div>
+      </span>
+
+    </div>
     <div class="brand-experience">
       <span>Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum bibendum. Duis
         tincidunt
@@ -151,7 +177,9 @@
         et
         vulputate euismod, nunc leo tempor lacus, ac rhoncus neque eros nec lacus. Cras lobortis molestie faucibus.
       </span>
-      <img src="@/assets/image/brand-experience.png" alt="brand-experience">
+      <div class="brand-ex-pic">
+        <img src="@/assets/image/brand-experience.png" alt="brand-experience">
+      </div>
     </div>
 
     <!-- Home最底部 -->
@@ -206,8 +234,7 @@ export default {
       //標題
       about: 'ABOUT DIGISALAD',
       awards: 'AWARDS',
-      ourIngredients: 'OUR INGRADIENTS',
-      ourBrandEx: 'OUR BRAND EXPERIENCE',
+      // ourIngredients: 'OUR INGRADIENTS',
 
       // 滾動時，導覽列變白＆漢堡變黑&顯示logo
       headerClass: 'transparent-background',

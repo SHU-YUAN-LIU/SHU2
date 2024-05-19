@@ -1,115 +1,127 @@
 .card-slider-group {
-    width: 80%;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  gap: 80px;
+  @media (width<=768px) {
+    flex-direction: column;
+  }
+
+  .card-slider-left {
+    width: 45%;
+    position: relative;
+    @media (width<=768px) {
+      width: 80%;
+    }
+
+    div {
+      position: relative;
+
+      img {
+        width: 100%;
+        vertical-align: middle;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+    }
+
+    button {
+      width: 250px;
+      height: 85px;
+      margin-bottom: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      border: none;
+      background-color: $blue;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      position: absolute;
+      bottom: -120px;
+      right: -50px;
+      @media (width<=768px) {
+        height: 60px;
+        bottom: -100px;
+        right: -25px;
+      }
+
+      &:hover {
+        background-color: #008993;
+      }
+
+      span {
+        @include title_4;
+        color: $white;
+        text-align: center;
+        line-height: $line-height;
+        letter-spacing: $letter-spacing;
+      }
+
+      div {
+        width: 60px;
+        height: 2px;
+        background-color: $white;
+      }
+    }
+  }
+
+  .card-slider-right {
+    width: 45%;
+    position: relative;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-    gap: 80px;
-
-
-    .card-slider-left {
-        width: 45%;
-        position: relative;
-
-        div {
-            position: relative;
-
-            img {
-                width: 100%;
-                vertical-align: middle;
-                object-fit: cover;
-                border-radius: 30px;
-
-            }
-        }
-
-
-        button {
-            width: 250px;
-            height: 85px;
-            margin-bottom: 60px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            border: none;
-            background-color: $blue;
-            cursor: pointer;
-            transition: all .3s ease-in-out;
-            position: absolute;
-            bottom: -120px;
-            right: -50px;
-
-            &:hover {
-                background-color: #008993;
-            }
-
-            span {
-                @include title_4;
-                color: $white;
-                text-align: center;
-                line-height: $line-height ;
-                letter-spacing: $letter-spacing ;
-            }
-
-            div {
-                width: 60px;
-                height: 2px;
-                background-color: $white;
-
-            }
-
-        }
+    flex-direction: column;
+    @media (width<=768px) {
+      width: 80%;
     }
 
-    .card-slider-right {
-        width: 45%;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-
-
-        span:nth-child(1) {
-            @include title_4;
-            color: $white;
-            letter-spacing: $letter-spacing;
-        }
-
-        span:nth-child(2) {
-            @include title_1;
-            color: $white;
-            letter-spacing: $letter-spacing;
-            margin-bottom: 40px;
-
-            &::after {
-                content: "";
-                display: block;
-                height: 8px;
-                width: 350px;
-                background-color: $blue;
-                position: absolute;
-                top: 54px;
-                z-index: -1;
-            }
-
-            &::before {
-                content: '';
-                width: 10px;
-                height: 10px;
-                background-color: $red;
-                border-radius: 50%;
-                position: absolute;
-                top: 50px;
-                right: 90px;
-
-            }
-        }
-
-        span:nth-child(3) {
-            @include title_4;
-            color: $white;
-            letter-spacing: $letter-spacing;
-            line-height: 1.5;
-        }
+    span:nth-child(1) {
+      @include title_4;
+      color: $white;
+      letter-spacing: $letter-spacing;
+      line-height: $line-height;
     }
+
+    span:nth-child(2) {
+      position: relative;
+      @include title_1;
+      color: $white;
+      letter-spacing: $letter-spacing;
+      margin-bottom: 40px;
+      @media (width<=768px) {
+        margin-bottom: 30px;
+      }
+
+      &::after {
+        content: '';
+        display: block;
+        height: 8px;
+        width: 350px;
+        background-color: $blue;
+        position: absolute;
+        bottom: 2px;
+        z-index: -1;
+      }
+
+      &::before {
+        content: '';
+        width: 10px;
+        height: 10px;
+        background-color: $red;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 2px;
+        right: 90px;
+      }
+    }
+
+    span:nth-child(3) {
+      @include title_4;
+      color: $white;
+      letter-spacing: $letter-spacing;
+      line-height: 1.5;
+    }
+  }
 }
