@@ -49,12 +49,15 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: flex-start;
-
       .logo {
         width: 180px;
         margin-bottom: 30px;
         @media (width<=1024px) {
           width: 165px;
+        }
+        @media (width<=430px) {
+          width: 125px;
+          margin-bottom: 15px;
         }
 
         img {
@@ -69,6 +72,9 @@
         font-weight: 600;
         @media (width<=1024px) {
           font-size: 28px;
+        }
+        @media (width<=430px) {
+          font-size: 20px;
         }
 
         span {
@@ -147,6 +153,10 @@
       flex-direction: column;
       align-items: center;
       gap: 100px;
+      @media (width<=430px) {
+        top: 90%;
+        gap: 60px;
+      }
 
       div {
         display: flex;
@@ -172,6 +182,9 @@
         height: 2px;
         background-color: rgb(189, 189, 189);
         transform: rotate(90deg);
+        @media (width<=430px) {
+          width: 85px;
+        }
       }
     }
   }
@@ -196,6 +209,9 @@
       letter-spacing: $letter-spacing;
       margin: 60px;
       position: relative;
+      @media (width<=430px) {
+        font-size: 14px;
+      }
     }
 
     button {
@@ -239,16 +255,21 @@
     border-top-left-radius: $border-radius-1;
     border-bottom-right-radius: $border-radius-1;
     position: absolute;
-    top: 2850px;
+    top: 2800px;
     @media (width<=1440px) {
       top: 2650px;
     }
     @media (width<=1024px) {
-      top: 2200px;
+      top: 2300px;
       height: 4000px;
     }
     @media (width<=768px) {
+      top: 2400px;
       height: 4300px;
+    }
+    @media (width<=430px) {
+      top: 2300px;
+      height: 5500px;
     }
 
     //藍色標題
@@ -269,10 +290,16 @@
         justify-content: center;
         align-items: center;
         padding: 360px 0 40px;
+        @media (width<=430px) {
+          padding: 100px 0 25px;
+        }
         span {
           @include title_2;
           color: $black;
           position: relative;
+          @media (width<=430px) {
+            font-size: 20px;
+          }
 
           &::after {
             content: '';
@@ -317,6 +344,10 @@
         color: $white;
         line-height: $line-height;
         letter-spacing: $letter-spacing;
+        @media (width<=430px) {
+          font-size: 14px;
+          line-height: 1.5;
+        }
       }
 
       //our server
@@ -364,6 +395,10 @@
       @media (width<=1024px) {
         grid-template-columns: repeat(2, 1fr);
       }
+      @media (width<=430px) {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0px;
+      }
 
       div {
         display: flex;
@@ -390,6 +425,9 @@
       @media (width<=768px) {
         width: 60%;
       }
+      @media (width<=430px) {
+        width: 80%;
+      }
 
       p {
         @include title_3;
@@ -404,6 +442,9 @@
         }
         @media (width<=768px) {
           margin-top: 25px;
+        }
+        @media (width<=430px) {
+          font-size: 14px;
         }
 
         &::after {
@@ -444,6 +485,10 @@
       @media (width<=768px) {
         padding: 50px;
       }
+      @media (width<=430px) {
+        padding: 30px;
+        gap: 0;
+      }
 
       .awards-title {
         width: 40%;
@@ -454,6 +499,9 @@
         @media (width<=1024px) {
           width: 80%;
         }
+        @media (width<=430px) {
+          gap: 20px;
+        }
 
         .award-content {
           @include title_4;
@@ -461,6 +509,10 @@
           align-items: center;
           line-height: $line-height;
           letter-spacing: $letter-spacing;
+          @media (width<=430px) {
+            line-height: 1.5;
+            font-size: 14px;
+          }
         }
       }
 
@@ -468,6 +520,9 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 30px;
+        @media (width<=430px) {
+          grid-gap: 0px;
+        }
         div {
           width: auto;
           img {
@@ -483,8 +538,9 @@
     .tonyng-bg {
       position: absolute;
       bottom: -300px;
-      width: 90%;
+      width: 80%;
       @media (width<=1440px) {
+        width: 90%;
         bottom: -450px;
       }
       @media (width<=1024px) {
@@ -492,16 +548,23 @@
       }
       @media (width<=768px) {
         width: 100%;
-        bottom: -300px;
+        bottom: -40px;
       }
-      div {
-        // width: 90%;
+      @media (width<=430px) {
+        bottom: -460px;
+      }
+      .tonyng-bg-pic {
+        @media (width<=430px) {
+          width: 100%;
+          height: 600px;
+        }
         img {
           border-top-right-radius: $border-radius-1;
           border-bottom-left-radius: $border-radius-1;
           border-bottom-right-radius: $border-radius-1;
           vertical-align: middle;
           width: 100%;
+          height: 100%;
           object-fit: cover;
         }
       }
@@ -520,6 +583,11 @@
           gap: 20px;
           width: 90%;
         }
+        @media (width<=430px) {
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+        }
 
         .tonyng-left {
           width: 30%;
@@ -532,6 +600,10 @@
           @media (width<=768px) {
             gap: 20px;
             width: 40%;
+          }
+          @media (width<=430px) {
+            gap: 20px;
+            width: 80%;
           }
           .tonyng {
             width: 200px;
@@ -561,6 +633,9 @@
               @media (width<=768px) {
                 font-size: 16px;
               }
+              @media (width<=430px) {
+                font-size: 14px;
+              }
             }
 
             span:last-child {
@@ -568,6 +643,9 @@
               font-style: italic;
               color: $white;
               letter-spacing: $letter-spacing;
+              @media (width<=430px) {
+                font-size: 14px;
+              }
             }
           }
         }
@@ -582,6 +660,9 @@
           .quote-pic {
             @media (width<=768px) {
               width: 85px;
+            }
+            @media (width<=430px) {
+              display: none;
             }
             img {
               width: 100%;
@@ -599,11 +680,10 @@
             line-height: $line-height;
             color: $white;
             @media (width<=1024px) {
-              line-height: 1.8;
+              line-height: 1.5;
             }
             @media (width<=768px) {
               font-size: 16px;
-              line-height: 1.5;
             }
 
             span {
@@ -627,13 +707,23 @@
     @media (width<=1440px) {
       margin-top: 3400px;
     }
-    @media (width<=768px) {
+    @media (width<=1024px) {
       margin-top: 4400px;
+    }
+    @media (width<=768px) {
+      margin-top: 4350px;
+    }
+    @media (width<=430px) {
+      margin-top: 5950px;
+      padding: 13px 0 25px;
     }
     span {
       @include title_2;
       color: $black;
       position: relative;
+      @media (width<=430px) {
+        font-size: 20px;
+      }
 
       &::after {
         content: '';
@@ -684,9 +774,13 @@
       color: $black;
       display: inline-block;
       margin-bottom: 40px;
+      @media (width<=430px) {
+        font-size: 14px;
+        line-height: 1.5;
+      }
     }
     .brand-ex-pic {
-      width: 80%;
+      width: 100%;
       margin: auto;
       img {
         width: 100%;
@@ -727,12 +821,19 @@
         border-radius: 50%;
         background-color: $blue;
         position: relative;
+        @media (width<=430px) {
+          width: 30px;
+          height: 30px;
+        }
 
         img {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          @media (width<=430px) {
+            width: 30%;
+          }
         }
       }
 
@@ -743,12 +844,19 @@
         border-radius: 50%;
         background-color: $blue;
         position: relative;
+        @media (width<=430px) {
+          width: 30px;
+          height: 30px;
+        }
 
         img {
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          @media (width<=430px) {
+            width: 30%;
+          }
         }
       }
     }

@@ -1,133 +1,148 @@
 .header-group {
-    position:fixed ;
-    width: 100%;
-    height: 100px;
+  position: fixed;
+  width: 100%;
+  height: 100px;
+  z-index: 10;
+  @media (width<=1440px) {
+    height: 80px;
+  }
+
+  .header {
+    width: 90%;
+    height: 60%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: 10;
-    @media (width<=1440px){
-        height: 80px;
-    }
 
-    .header {
-        width: 90%;
-        height: 60%;
-        display: flex;
-        justify-content:flex-end;
-        align-items: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 10;
-
-        
-.header-logo{
-    height: 100%;
-    position: fixed;
-    left: 0;
-    img{
+    .header-logo {
+      // height: 100%;
+      position: fixed;
+      left: 0;
+      @media (width<=430px) {
+        width: 95px;
+      }
+      img {
         width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: middle;
+      }
     }
-}
-        .header-right {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 40px;
+    .header-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+      @media (width<=430px) {
+        gap: 20px;
+      }
 
-            .start {
-                width: 200px;
-                height: 40px;
-                background: linear-gradient(to right, #4EE5EA, #26D0A8);
-                border-radius: 30px;
-                text-align: center;
-                line-height: 40px;
-                &.active {
-                    display: none;
-                }
-
-                span {
-                    @include title_5;
-                    letter-spacing: 1.3px;
-                    color: $white;
-
-                }
-            }
-
-            .ham-line-group {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: flex-start;
-                cursor: pointer;
-                
-                .line-group {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    align-items: flex-end;
-                    height: 24px;
-
-                    .line:nth-child(1) {
-                        width: 30px;
-                        height: 3px;
-                        background-color: $white;
-                        margin: 3px 0;
-                        transition: transform 0.3s, opacity 0.3s;
-                    }
-                    .line:nth-child(2) {
-                        width: 30px;
-                        height: 3px;
-                        background-color: $white;
-                        margin: 3px 0;
-                        transition: transform 0.3s, opacity 0.3s;
-                    }
-                    .line:nth-child(3) {
-                        width: 20px;
-                        height: 3px;
-                        background-color: $white;
-                        margin: 3px 0;
-                        transition: transform 0.3s, opacity 0.3s;
-                    }
-
-                    &.active .line:nth-child(1) {
-                        transform: translateY(9px) rotate(45deg);
-                        background-color: $white !important;
-                    }
-
-                    &.active .line:nth-child(2) {
-                        opacity: 0;
-                    }
-
-                    &.active .line:nth-child(3) {
-                        width: 30px;
-                        transform: translateY(-9px) rotate(-45deg);
-                        background-color: $white !important;
-                    }
-                }
-                
-            }
+      .start {
+        width: 200px;
+        height: 40px;
+        background: linear-gradient(to right, #4ee5ea, #26d0a8);
+        border-radius: 30px;
+        text-align: center;
+        line-height: 40px;
+        @media (width<=430px) {
+          width: 185px;
+        }
+        &.active {
+          display: none;
         }
 
+        span {
+          @include title_5;
+          letter-spacing: 1.3px;
+          color: $white;
+        }
+      }
+
+      .ham-line-group {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        cursor: pointer;
+
+        .line-group {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-end;
+          height: 24px;
+
+          .line:nth-child(1) {
+            width: 30px;
+            height: 3px;
+            background-color: $white;
+            margin: 3px 0;
+            transition:
+              transform 0.3s,
+              opacity 0.3s;
+          }
+          .line:nth-child(2) {
+            width: 30px;
+            height: 3px;
+            background-color: $white;
+            margin: 3px 0;
+            transition:
+              transform 0.3s,
+              opacity 0.3s;
+          }
+          .line:nth-child(3) {
+            width: 20px;
+            height: 3px;
+            background-color: $white;
+            margin: 3px 0;
+            transition:
+              transform 0.3s,
+              opacity 0.3s;
+          }
+
+          &.active .line:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+            background-color: $white !important;
+          }
+
+          &.active .line:nth-child(2) {
+            opacity: 0;
+          }
+
+          &.active .line:nth-child(3) {
+            width: 30px;
+            transform: translateY(-9px) rotate(-45deg);
+            background-color: $white !important;
+          }
+        }
+      }
     }
+  }
 }
 
 //滾動時，底色從透明變成白色
 .transparent-background {
-    background-color: transparent;
-    transition: background-color 0.3s;
+  background-color: transparent;
+  transition: background-color 0.3s;
 }
 
 .white-background {
-    background-color: $white;
-    transition: background-color 0.3s;
+  background-color: $white;
+  transition: background-color 0.3s;
+  box-shadow: 0 0 15px rgba(131, 131, 131, 0.6);
 }
 
 .hide-header {
-    transform: translateY(-100%);
-    transition: transform 0.3s;
+  transform: translateY(-100%);
+  transition: transform 0.3s;
 }
 
 //滾動時，漢堡變成黑色
-.black-ham{
-background-color: $black !important;
+.black-ham {
+  background-color: $black !important;
 }

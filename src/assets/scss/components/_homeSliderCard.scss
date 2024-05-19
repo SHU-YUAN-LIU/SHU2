@@ -8,6 +8,9 @@
   @media (width<=768px) {
     flex-direction: column;
   }
+  @media (width<=430px) {
+    gap: 20px;
+  }
 
   .card-slider-left {
     width: 45%;
@@ -15,6 +18,9 @@
     @media (width<=768px) {
       width: 80%;
     }
+    // @media (width<=430px) {
+    //   width: 30%;
+    // }
 
     div {
       position: relative;
@@ -24,6 +30,9 @@
         vertical-align: middle;
         object-fit: cover;
         border-radius: 30px;
+        @media (width<=430px) {
+          border-radius: 10px;
+        }
       }
     }
 
@@ -46,6 +55,9 @@
         height: 60px;
         bottom: -100px;
         right: -25px;
+      }
+      @media (width<=430px) {
+        display: none;
       }
 
       &:hover {
@@ -82,6 +94,9 @@
       color: $white;
       letter-spacing: $letter-spacing;
       line-height: $line-height;
+      @media (width<=430px) {
+        font-size: 14px;
+      }
     }
 
     span:nth-child(2) {
@@ -90,8 +105,15 @@
       color: $white;
       letter-spacing: $letter-spacing;
       margin-bottom: 40px;
+      @media (width<=1024px) {
+        font-size: 30px;
+      }
       @media (width<=768px) {
         margin-bottom: 30px;
+      }
+      @media (width<=430px) {
+        margin-bottom: 30px;
+        font-size: 20px;
       }
 
       &::after {
@@ -103,6 +125,14 @@
         position: absolute;
         bottom: 2px;
         z-index: -1;
+        @media (width<=1024px) {
+          width: 330px;
+        }
+        @media (width<=430px) {
+          width: 95%;
+          bottom: -1px;
+          left: -5px;
+        }
       }
 
       &::before {
@@ -113,7 +143,19 @@
         border-radius: 50%;
         position: absolute;
         bottom: 2px;
-        right: 90px;
+        right: 250px;
+        @media (width<=1440px) {
+          right: 90px;
+        }
+        @media (width<=1024px) {
+          right: -25px;
+        }
+        @media (width<=768px) {
+          right: 85px;
+        }
+        @media (width<=430px) {
+          right: -2px;
+        }
       }
     }
 
@@ -122,6 +164,11 @@
       color: $white;
       letter-spacing: $letter-spacing;
       line-height: 1.5;
+      @media (width<=430px) {
+        letter-spacing: 0.3px;
+        font-size: 14px;
+        text-align: start;
+      }
     }
   }
 }
