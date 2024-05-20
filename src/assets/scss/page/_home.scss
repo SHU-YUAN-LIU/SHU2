@@ -268,7 +268,8 @@
     border-top-left-radius: $border-radius-1;
     border-bottom-right-radius: $border-radius-1;
     position: absolute;
-    top: 3600px;
+    // top: 2900px;
+    top: 2850px;
     @media (width<=1440px) {
       top: 2450px;
     }

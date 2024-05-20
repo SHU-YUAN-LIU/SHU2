@@ -9,6 +9,9 @@
     top: 40px;
     left: 40px;
     z-index: 6;
+    @media (width<=430px) {
+      display: none;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -29,6 +32,9 @@
     @media (width<=768px) {
       flex-direction: column;
     }
+    @media (width<=430px) {
+      gap: 20px;
+    }
     .header-logo {
       height: 100%;
       img {
@@ -41,6 +47,9 @@
       gap: 40px;
       display: flex;
       flex-direction: column;
+      @media (width<=430px) {
+        gap: 20px;
+      }
 
       //about-us
       .about-us {
@@ -54,8 +63,13 @@
         border-radius: 30px;
         position: relative;
         @media (width<=768px) {
-          height: 150px;
+          height: 100px;
         }
+        @media (width<=430px) {
+          width: 280px;
+          padding: 30px;
+        }
+
         &:hover {
           box-shadow: 0 0 25px #04585e;
           transition: 0.3s ease-in-out;
@@ -68,8 +82,6 @@
           gap: 20px;
 
           .about-us-pic {
-            height: 80px;
-
             img {
               width: 100%;
               height: 100%;
@@ -84,6 +96,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               margin-bottom: 10px;
+              @media (width<=430px) {
+                font-size: 14px;
+              }
             }
 
             span {
@@ -92,6 +107,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               position: relative;
+              @media (width<=430px) {
+                font-size: 24px;
+              }
 
               &::after {
                 position: absolute;
@@ -114,7 +132,10 @@
           border-radius: 30px;
           mix-blend-mode: multiply;
           @media (width<=768px) {
-            height: 150px;
+            height: 100px;
+          }
+          @media (width<=430px) {
+            width: 280px;
           }
 
           img {
@@ -140,8 +161,15 @@
         padding: 40px;
         position: relative;
         @media (width<=768px) {
-          height: 150px;
+          height: 100px;
+          justify-content: center;
+          align-items: center;
         }
+        @media (width<=430px) {
+          width: 280px;
+          padding: 30px;
+        }
+
         &:hover {
           box-shadow: 0 0 25px #04585e;
           transition: 0.3s ease-in-out;
@@ -157,8 +185,6 @@
           }
 
           .works-pic {
-            height: 80px;
-
             img {
               width: 100%;
               height: 100%;
@@ -173,6 +199,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               margin-bottom: 10px;
+              @media (width<=430px) {
+                font-size: 14px;
+              }
             }
 
             span {
@@ -181,6 +210,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               position: relative;
+              @media (width<=430px) {
+                font-size: 24px;
+              }
 
               &::after {
                 position: absolute;
@@ -206,7 +238,10 @@
           overflow: hidden;
           border-radius: 30px;
           @media (width<=768px) {
-            height: 150px;
+            height: 100px;
+          }
+          @media (width<=430px) {
+            width: 280px;
           }
 
           img {
@@ -222,6 +257,9 @@
       gap: 40px;
       display: flex;
       flex-direction: column;
+      @media (width<=430px) {
+        gap: 20px;
+      }
 
       //careers
       .careers {
@@ -237,7 +275,9 @@
         position: relative;
         @media (width<=768px) {
           width: 100%;
-          height: 150px;
+          height: 100px;
+          justify-content: center;
+          align-items: center;
         }
         &:hover {
           box-shadow: 0 0 25px #04585e;
@@ -253,11 +293,10 @@
           z-index: 5;
           @media (width<=768px) {
             flex-direction: row;
+            align-items: center;
           }
 
           .careers-pic {
-            // height: 80px;
-
             img {
               width: 100%;
               height: 100%;
@@ -272,6 +311,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               margin-bottom: 10px;
+              @media (width<=430px) {
+                font-size: 14px;
+              }
             }
 
             span {
@@ -280,6 +322,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               position: relative;
+              @media (width<=430px) {
+                font-size: 24px;
+              }
 
               &::after {
                 position: absolute;
@@ -305,7 +350,7 @@
           overflow: hidden;
           border-radius: 30px;
           @media (width<=768px) {
-            height: 150px;
+            height: 100px;
           }
 
           img {
@@ -328,7 +373,7 @@
         padding: 40px;
         position: relative;
         @media (width<=768px) {
-          height: 150px;
+          height: 100px;
           width: 100%;
           justify-content: center;
           align-items: center;
@@ -351,7 +396,7 @@
           }
 
           .insights-pic {
-            height: 80px;
+            height: 60px;
 
             img {
               width: 100%;
@@ -367,6 +412,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               margin-bottom: 10px;
+              @media (width<=430px) {
+                font-size: 14px;
+              }
             }
 
             span {
@@ -375,6 +423,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               position: relative;
+              @media (width<=430px) {
+                font-size: 24px;
+              }
 
               &::after {
                 position: absolute;
@@ -401,7 +452,7 @@
           border-radius: 30px;
           @media (width<=768px) {
             width: 100%;
-            height: 150px;
+            height: 100px;
           }
 
           img {
@@ -417,6 +468,9 @@
       gap: 40px;
       display: flex;
       flex-direction: column;
+      @media (width<=430px) {
+        gap: 20px;
+      }
 
       //services
       .services {
@@ -431,10 +485,15 @@
         padding: 40px;
         position: relative;
         @media (width<=768px) {
-          height: 150px;
+          height: 100px;
           justify-content: center;
           align-items: center;
         }
+        @media (width<=430px) {
+          width: 280px;
+          padding: 30px;
+        }
+
         &:hover {
           box-shadow: 0 0 25px #04585e;
           transition: 0.3s ease-in-out;
@@ -452,7 +511,7 @@
           }
 
           .services-pic {
-            height: 80px;
+            height: 60px;
 
             img {
               width: 100%;
@@ -468,6 +527,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               margin-bottom: 10px;
+              @media (width<=430px) {
+                font-size: 14px;
+              }
             }
 
             span {
@@ -476,7 +538,9 @@
               color: $white;
               letter-spacing: $letter-spacing;
               position: relative;
-
+              @media (width<=430px) {
+                font-size: 24px;
+              }
               &::after {
                 position: absolute;
                 content: '';
@@ -501,7 +565,10 @@
           overflow: hidden;
           border-radius: 30px;
           @media (width<=768px) {
-            height: 150px;
+            height: 100px;
+          }
+          @media (width<=430px) {
+            width: 280px;
           }
 
           img {
@@ -523,8 +590,13 @@
         opacity: 0.95;
         border-radius: 30px;
         @media (width<=768px) {
-          height: 150px;
+          height: 100px;
         }
+        @media (width<=430px) {
+          width: 280px;
+          padding: 30px;
+        }
+
         &:hover {
           box-shadow: 0 0 25px #04585e;
           transition: 0.3s ease-in-out;
@@ -544,6 +616,9 @@
               color: $black;
               letter-spacing: $letter-spacing;
               margin-bottom: 10px;
+              @media (width<=430px) {
+                font-size: 14px;
+              }
             }
 
             span {
@@ -552,7 +627,9 @@
               color: $blue;
               letter-spacing: $letter-spacing;
               position: relative;
-
+              @media (width<=430px) {
+                font-size: 24px;
+              }
               &::after {
                 position: absolute;
                 content: '';
