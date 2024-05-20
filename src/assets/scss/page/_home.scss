@@ -196,9 +196,22 @@
     flex-direction: column;
     align-items: center;
     padding: 0 0 350px;
+    // width: 80%;
 
     .content-video {
+      position: relative;
       width: 80%;
+      padding-bottom: 45%; /* 高寬比16:9 */
+      height: 0;
+      margin: auto;
+      iframe {
+        background-color: $gray;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     .content-video-word {
@@ -255,16 +268,16 @@
     border-top-left-radius: $border-radius-1;
     border-bottom-right-radius: $border-radius-1;
     position: absolute;
-    top: 2800px;
+    top: 3600px;
     @media (width<=1440px) {
-      top: 2650px;
+      top: 2450px;
     }
     @media (width<=1024px) {
-      top: 2300px;
+      top: 3300px;
       height: 4000px;
     }
     @media (width<=768px) {
-      top: 2400px;
+      top: 3260px;
       height: 4300px;
     }
     @media (width<=430px) {

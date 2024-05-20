@@ -41,9 +41,20 @@
 
     <!-- 內文影片 -->
     <div class="content-video-container">
-      <video class="content-video" autoplay muted loop>
+      <div class="content-video">
+        <iframe src="https://www.youtube.com/embed/IeIRJ9jZ5Ro?si=2R0seav6mAoXL3om" title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+      </div>
+      <!-- <video class="content-video" autoplay muted loop>
         <source src="@/assets/video/DigiSalad - 為您創造驚喜的用戶體驗.mp4" type="video/mp4" id="videoVideo" />
-      </video>
+      </video> -->
+      <!-- <video tabindex="-1" class="video-stream html5-main-video" webkit-playsinline="" playsinline=""
+        controlslist="nodownload" style="width: 1129px; height: 635px; left: 1px; top: 0px;"
+        src="https://youtu.be/IeIRJ9jZ5Ro">
+      </video> -->
       <span data-aos="fade-up" class="content-video-word">
         Cras quis nulla commodo, aliquam lectus sed, blandit augue. Cras ullamcorper bibendum
         bibendum. Duis tincidunt urna non pretium porta. Nam condimentum vitae ligula vel ornare.

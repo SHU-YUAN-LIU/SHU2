@@ -1,26 +1,22 @@
 //base
-@import "base/border";
-@import "base/btn";
-@import "base/color";
-@import "base/font";
-@import "base/reset";
+@import 'base/border';
+@import 'base/btn';
+@import 'base/color';
+@import 'base/font';
+@import 'base/reset';
 
 //組件
-@import "components/waveLineTitle";
-@import "components/ourServerCard";
-@import "components/homeSliderCard";
-@import "components/MainHeader";
-@import "components/hamMenu";
-
+@import 'components/waveLineTitle';
+@import 'components/ourServerCard';
+@import 'components/homeSliderCard';
+@import 'components/MainHeader';
+@import 'components/hamMenu';
 
 //layout
 // @import "layout/header";
 
-
 //page
-@import "page/home";
-
-
+@import 'page/home';
 
 // // 以下為了覆蓋bootsrtape
 // @import "node_modules/bootstrap/scss/functions"; // 必要的方法(bootstraps)
@@ -31,11 +27,11 @@
 
 //讓反白的字體變顏色
 ::-moz-selection {
-    background-color: rgba(212, 255, 0, 0.2);
-    color: #000;
+  background-color: rgba(212, 255, 0, 0.2);
+  color: #000;
 }
- 
+
 ::selection {
-    background-color:#EE6C8A;
-    color: #000;
+  background-color: #26c6d0;
+  color: #000;
 }
